@@ -10,13 +10,13 @@
     <div class="top">
       <h1>Hello and welcome to Mosa's weather App 🌟</h1>
       <header>
-        <form id="search-form">
+        <form class="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
             class="search-input"
-            id="search-input"
+            class="search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -24,13 +24,17 @@
     </div>
     <div class="middle">
       <div>
-        <h2>Cape Town</h2>
-        <p>
-          Monday 14:30, sunny <br />
-          Humidity: 70%, Wind: 6km/h
+        <h2 class="city">Cape Town</h2>
+        <p class="dayDetails">
+          Monday 14:30, Sunny <br />
+          Humidity: <strong>70%</strong>, Wind: <strong>6km/h</strong>
         </p>
       </div>
-      <div>☀️ 28°C</div>
+      <div class="Temp">
+        <div class="icon">🌤️</div>
+        <div class="dayTemp">12</div>
+        <div class="unit">°C</div>
+      </div>
     </div>
     <footer class="bottom">
       This project was coded by

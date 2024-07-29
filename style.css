@@ -1,19 +1,72 @@
 body {
   background-color: rgb(170, 130, 207);
 }
+.search-input {
+  background-color: #f4f0ff;
+  border: none;
+  border-radius: 6px;
+  width: 50%;
+  font-size: 16px;
+  padding: 15px 20px;
+  margin: 5px auto;
+}
 
+.search-button {
+  background: #885df1;
+  padding: 15px 30px;
+  border: none;
+  font-size: 16px;
+  margin: 5px auto;
+  border-radius: 6px;
+  color: white;
+}
 .top {
   text-align: center;
 }
 .middle {
-  background: rgb(216, 178, 210);
+  background: rgb(190, 161, 218);
   max-width: 600px;
   margin: 45px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 16px;
   padding: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 
+.city {
+  margin: 0;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.dayDetails {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+strong {
+  color: #693bdd;
+}
+
+.Temp {
+  display: flex;
+}
+
+.icon {
+  font-size: 90px;
+  line-height: 80px;
+}
+.dayTemp {
+  font-size: 90px;
+  line-height: 80px;
+}
+
+.unit {
+  font-size: 55px;
+  line-height: 40px;
+}
 .bottom {
   text-align: center;
+  font-size: 12px;
 }
