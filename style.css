@@ -45,8 +45,14 @@ body {
   line-height: 20px;
 }
 
-strong {
+.humidity {
   color: #693bdd;
+  font-weight: bold;
+}
+
+.wind {
+  color: #693bdd;
+  font-weight: bold;
 }
 
 .Temp {
