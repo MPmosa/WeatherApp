@@ -13,6 +13,13 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
+
+  let iconElement = document.querySelector("#icon");
+  if (temperature < 20) {
+    iconElement.innerHTML = "🥶";
+  } else {
+    iconElement.innerHTML = "🥵";
+  }
 }
 
 function formatDate(date) {
@@ -51,4 +58,4 @@ function search(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", search);
 
-searchCity("Paris");
+searchCity("Cape town");
