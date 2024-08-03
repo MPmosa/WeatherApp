@@ -34,6 +34,22 @@ body {
   justify-content: space-between;
 }
 
+.weatherForecast {
+  background: rgb(190, 161, 218);
+  max-width: 600px;
+  margin: 45px auto;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  font-size: 20px;
+  line-height: 20px;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .city {
   margin: 0;
   font-size: 40px;
@@ -72,6 +88,18 @@ body {
   font-size: 55px;
   line-height: 40px;
 }
+
+.forecastTemp {
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.forecastTempHigh {
+  font-weight: bold;
+  color: #693bdd;
+}
+
 .bottom {
   text-align: center;
   font-size: 12px;
