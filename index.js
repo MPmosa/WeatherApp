@@ -20,6 +20,7 @@ function displayTemperature(response) {
   } else {
     iconElement.innerHTML = "🥵";
   }
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -55,33 +56,42 @@ function search(event) {
   searchCity(searchInput.value);
 }
 
-function displayforecast() {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    ,
-  ];
+function getForecast(city) {
+  let apiKey = "to1f03b18d7d333882604afa441d6583";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayforecast);
+}
+
+function dayForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function displayforecast(response) {
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `
  <div class="forecastDay">
-        <div class="forecastDate">${day}</div>
-        <div class="forecastIcon">🥵</div>
+        <div class="forecastDate">${dayForecast(day.time)}</div>
+        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
         <div class="forecastTemp">
-          <div class="forecastTempHigh">27</div>
-          °C|
-          <div class="forecastTemplow">12</div>
-          °C
+          <div class="forecastTempHigh">${Math.round(
+            day.temperature.maximum
+          )}º</div>|
+          <div class="forecastTemplow">${Math.round(
+            day.temperature.minimum
+          )}º</div>
+          
         </div>
  </div>
 `;
+    }
   });
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
@@ -91,4 +101,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", search);
 
 searchCity("Cape town");
-displayforecast();
